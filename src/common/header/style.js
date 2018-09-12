@@ -43,12 +43,33 @@ margin-right:10px;
  }
 `;
 
+
+export const SearchWrapper = styled.div`
+  position:relative;
+  float:left;
+  height:58px;
+  .iconfont{
+    position:absolute;
+    right:5px;
+    top:14px;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+    &.focused{
+    background:#777;
+    color:#fff;
+  }
+}
+`;
+
 export const Search = styled.input.attrs({
 	placeholder:"搜索"
 })`
 position:relative;
 top:9px;
-padding: 0 40px 0 20px;
+padding: 0 30px 0 20px;
 margin-left:15px;
 width: 160px;
 height: 38px;
@@ -56,8 +77,23 @@ font-size: 14px;
 border: 1px solid #eee;
 border-radius: 40px;
 background: #eee;
+&.slide-enter{
+    transition:all .2s ease-out;
+  }
+  &.slide-enter-active{
+    width:240px;
+  }
+  &.slide-exit{
+    transition:all .2s ease-out;
+  }
+  &.slide-exit-active{
+    width:160px;
+  }
 &:focus{
 	outline:none
+}
+&.focused{
+  width:240px;
 }
 `;
 
@@ -81,4 +117,51 @@ export const Button = styled.button`
     &:focus{
     	outline:none;
     }
-`
+    &.writing{
+      width:100px;
+      height:40px;
+      background-color:#ea6f5a
+      color:#fff;
+      .iconfont{
+        margin-right:3px;
+      }
+    }
+
+`;
+
+export const SearchInfo = styled.div`
+   position:absolute;
+   overflow:hidden;
+   left:20px;
+   top:58px;
+   padding:10px;
+   background-color: #fff;
+   width:260px;
+   box-shadow: 0 0 8px rgba(0,0,0,.2);
+`;
+
+export const SearchInfoTitle = styled.h3`
+  margin-top:10px;
+  margin-bottom:15px;
+  line-height:20px;
+  font-size:14px;
+  color:#969696;
+`;
+
+export const SearchInfoSwitch = styled.span`
+  float:right;
+  font-size:13px;
+`;
+
+export const SearchInfoItem = styled.a`
+  display:block;
+  float:left;
+  line-height:20px;
+  padding:0 5px;
+  margin-right:10px;
+  margin-bottom:15px;
+  font-size:12px;
+  border:1px solid #ddd;
+  color:#787878;
+  border-radius:3px;
+`;
